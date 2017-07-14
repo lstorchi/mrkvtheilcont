@@ -97,7 +97,7 @@ allratingsnins = []
 
 time = ms.shape[1]
 pr = numpy.zeros((rating,rating,time), dtype='float64')
-if not mainmkvcmp.main_mkc_comp_cont (ms, i_r, timeinf, step, tprev, \
+if not mainmkvcmp.main_mkc_comp_cont (ms, i_r, step, tprev, \
         numofrun, verbose, True, args.seed, errmsg, entropia, \
         var, allratings, allratingsnins, pr, meanval, stdeval):
     for m in errmsg:

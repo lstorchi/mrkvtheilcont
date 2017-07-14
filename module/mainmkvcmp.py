@@ -113,7 +113,7 @@ def generate_mc (mc, tprev, countries, cdf, rating, q):
        
 #####################################################################
 
-def main_mkc_comp_cont (rm, ir, timeinf, step, tprev, \
+def main_mkc_comp_cont (rm, ir, step, tprev, \
         numofrun, verbose, outfiles, seed, errmsg, \
         entropia, var, allratings, allratingsbins, \
         pr, meanval, stdeval, \
