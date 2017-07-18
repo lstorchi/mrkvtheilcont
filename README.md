@@ -7,7 +7,7 @@ packages should work also under Mac OS X and Windows OS.
 
 To run the GUI:
 
-python markovc_qt.py 
+python markovc_qt.py (not yet tested properly) 
 
 to run the CLI:
 
