@@ -32,7 +32,5 @@ optional arguments:
   -B NAMEOFBPMATRIX, --name-of-bpmatrix NAMEOFBPMATRIX
                         Name of the rewards matrix
   -v, --verbose         increase output verbosity
-  -i, --time-inf        Simulation using stationary distribution
   -S, --seed            Using a seed for the random generator
-
 
