@@ -125,17 +125,10 @@ class main_window(QtGui.QMainWindow):
 
            outf.write("\n")
 
-           if self.__options_dialog__.getinftime():
-                ev = self.__entropia__[1:]
-                m = numpy.mean(ev)
-                s = numpy.std(ev)
-                outf.write("Stationary value: " + \
-                        str(m) + " stdev: " + str(s))
-           else:
-                outf.write("t E(DT) STD(DT)\n")
-                for t in range(self.__options_dialog__.gettprev()):
-                    outf.write("%d %f %f \n"%(t+1, self.__entropia__[t], \
-                            self.__var__[t]))
+           outf.write("t E(DT) STD(DT)\n")
+           for t in range(self.__options_dialog__.gettprev()):
+               outf.write("%d %f %f \n"%(t+1, self.__entropia__[t], \
+                       self.__var__[t]))
 
            outf.close()
 
@@ -239,8 +232,7 @@ class main_window(QtGui.QMainWindow):
             self.__allratings__ = []
             self.__allratingsnins__ = []
 
-            if (not mainmkvcmp.main_mkc_comp (self.__rm__, self.__ir__, \
-                    self.__options_dialog__.getinftime(), \
+            if (not mainmkvcmp.main_mkc_comp_cont (self.__rm__, self.__ir__, \
                     self.__options_dialog__.getstep(), \
                     self.__options_dialog__.gettprev(), \
                     self.__options_dialog__.getnofrun(), \
@@ -264,14 +256,7 @@ class main_window(QtGui.QMainWindow):
             self.__plots__.setEnabled(True)
             self.__mats__.setEnabled(True)
 
-            if self.__options_dialog__.getinftime():
-                ev = self.__entropia__[1:]
-                QtGui.QMessageBox.information( self, \
-                        "Value", "Stationary value: " +\
-                        str(numpy.mean(ev)) + " stdev: " + \
-                        str(numpy.std(ev)))
-            else:
-                self.plot(self.__entropia__)
+            self.plot(self.__entropia__)
 
         else:
             QtGui.QMessageBox.critical( self, \

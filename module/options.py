@@ -9,16 +9,12 @@ class optiondialog(QtGui.QDialog):
         self.__step__ = 0.25
         self.__tprev__ = 37
         self.__nofrun__ = 100
-        self.__inftime__ = False
        
         super(optiondialog, self).__init__(parent)
 
         self.okbutton = QtGui.QPushButton('Ok');
         self.okbutton.setFont(QtGui.QFont("Times", 10, QtGui.QFont.Bold));
         self.connect(self.okbutton, QtCore.SIGNAL("clicked()"), self.closedialog)
-
-        self.inftcb = QtGui.QCheckBox("Simulation using stationary distribution", self)
-        self.inftcb.setChecked(self.__inftime__)
 
         labelstep = QtGui.QLabel("Bin width: ", self)
         self.steptb = QtGui.QLineEdit(str(self.__step__), self)
@@ -36,8 +32,6 @@ class optiondialog(QtGui.QDialog):
         self.nofruntb.resize(280,40)
 
         self.grid = QtGui.QGridLayout(self)
-
-        self.grid.addWidget(self.inftcb)
 
         self.grid.addWidget(labelstep)
         self.grid.addWidget(self.steptb)
@@ -72,8 +66,6 @@ class optiondialog(QtGui.QDialog):
             "ERROR", \
             "Max. num of iterations unexpected value reset to defaul")
 
-        self.__inftime__ = self.inftcb.isChecked()
-
         self.close()
 
     def getstep (self):
@@ -84,9 +76,6 @@ class optiondialog(QtGui.QDialog):
 
     def getnofrun (self):
         return self.__nofrun__
-
-    def getinftime (self):
-        return self.__inftime__
 
 class optionnamedialog(QtGui.QDialog):
 
