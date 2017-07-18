@@ -7,7 +7,7 @@ class optiondialog(QtGui.QDialog):
 
     def __init__(self, parent=None):
         self.__step__ = 0.25
-        self.__tprev__ = 37
+        self.__tprev__ = 1096
         self.__nofrun__ = 100
        
         super(optiondialog, self).__init__(parent)
@@ -80,8 +80,8 @@ class optiondialog(QtGui.QDialog):
 class optionnamedialog(QtGui.QDialog):
 
     def __init__(self, parent=None):
-        self.__namerm__ = "ratings"
-        self.__nameir__ = "interest_rates"
+        self.__namerm__ = "data_sp"
+        self.__nameir__ = "ir"
        
         super(optionnamedialog, self).__init__(parent)
 

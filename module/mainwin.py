@@ -162,7 +162,7 @@ class main_window(QtGui.QMainWindow):
               "ERROR", \
               "Error while opening " + self.__inputfile__ )
              return
-          
+
           if not(self.__options_name_dialog__.getratingname() in msd.keys()):
              QtGui.QMessageBox.critical( self, \
               "ERROR", \
@@ -223,7 +223,8 @@ class main_window(QtGui.QMainWindow):
             self.__entropia__ = numpy.zeros(tprev, dtype='float64')
             
             rating = numpy.max(self.__rm__)
-            self.__pr__ = numpy.zeros((rating,rating), dtype='float64')
+            self.__pr__ = numpy.zeros((rating,rating, \
+                    self.__rm__.shape[1]), dtype='float64')
 
             self.__meanval__ = []
             self.__stdeval__ = []

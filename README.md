@@ -14,7 +14,7 @@ to run the CLI:
 python markovc.py
 
 usage: markovc.py [-h] -m RMATFILENAME -b IMATFILENAME [-s STEP] [-t TPREV] -n
-                  MAXRUN [-M NAMEOFMATRIX] [-B NAMEOFBPMATRIX] [-v] [-i] [-S]
+                  MAXRUN [-M NAMEOFMATRIX] [-B NAMEOFBPMATRIX] [-v] [-S]
 
 optional arguments:
   -h, --help            show this help message and exit
